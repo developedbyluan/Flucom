@@ -27,6 +27,14 @@ struct QuoteView: View {
                         .background(.black.opacity(0.5))
                         .clipShape(.rect(cornerRadius: 25))
                         .padding(.horizontal)
+                    
+                    ZStack {
+                        AsyncImage(url: vm.character.images[0]) { image in
+                            image
+                        } placeholder: {
+                            ProgressView()
+                        }
+                    }
                 }
                 .frame(width: geometry.size.width)
             }
