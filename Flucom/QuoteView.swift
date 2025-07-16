@@ -20,6 +20,8 @@ struct QuoteView: View {
                     .frame(width: geometry.size.width * 2.7, height: geometry.size.height * 1.2)
                 
                 VStack {
+                    Spacer(minLength: 60)
+                    
                     Text("\"\(vm.quote.quote)\"")
                         .multilineTextAlignment(.center)
                         .foregroundStyle(.white) // white text even in light mode
@@ -61,8 +63,10 @@ struct QuoteView: View {
                         .clipShape(.rect(cornerRadius: 7))
                         .shadow(color: .breakingBadYellow, radius: 2)
                     }
+                    
+                    Spacer(minLength: 95)
                 }
-                .frame(width: geometry.size.width)
+                .frame(width: geometry.size.width, height: geometry.size.height)
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
