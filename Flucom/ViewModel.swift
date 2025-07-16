@@ -37,4 +37,22 @@ class ViewModel {
         let characterData = try! Data(contentsOf: Bundle.main.url(forResource: "samplecharacter", withExtension: "json")!)
         character = try! decoder.decode(Char.self, from: characterData)
     }
+    
+    // run after users taps generate random quote button
+    func getData(for show: String) async {
+        status = .fetching
+        
+        do {
+            quote = try await fetcher.fetchQuote(from: show)
+            
+            character = try await fetcher.fetchCharacter(quote.character)
+            
+            character.death = try await fetcher.fetchDeath(for: character.name)
+            
+            status = .success
+        } catch {
+            // there's an invisible error value in the catch block
+            status = .failed(error: error)
+        }
+    }
 }
