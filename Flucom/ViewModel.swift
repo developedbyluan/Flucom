@@ -19,4 +19,6 @@ class ViewModel {
         case success
         case failed(error: Error)
     }
+    
+    private(set) var status: FetchStatus = .notStarted
 }
