@@ -46,6 +46,19 @@ struct QuoteView: View {
                     }
                     .frame(width: geometry.size.width/1.1, height: geometry.size.height/1.8)
                     .clipShape(.rect(cornerRadius: 50))
+                    
+                    // Button
+                    Button {
+                        
+                    } label: {
+                        Text("Get Random Quote")
+                        .font(.title)
+                        .foregroundStyle(.white)
+                        .padding()
+                        .background(.breakingBadGreen)
+                        .clipShape(.rect(cornerRadius: 7))
+                        .shadow(color: .breakingBadYellow, radius: 2)
+                    }
                 }
                 .frame(width: geometry.size.width)
             }
