@@ -21,4 +21,7 @@ class ViewModel {
     }
     
     private(set) var status: FetchStatus = .notStarted
+    
+    private let fetcher = FetchService()
+    
 }
