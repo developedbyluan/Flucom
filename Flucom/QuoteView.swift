@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct QuoteView: View {
+    let vm = ViewModel()
+    
     let show: String
     
     var body: some View {
