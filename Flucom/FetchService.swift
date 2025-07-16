@@ -23,6 +23,7 @@ struct FetchService {
             .appending(queryItems: [URLQueryItem(name: "production", value: show)])
         
         // Fetch data
+        let (data, response) = try await URLSession.shared.data(from: fetchURL)
         
         // Handle response
         
