@@ -28,7 +28,7 @@ struct QuoteView: View {
                         .clipShape(.rect(cornerRadius: 25))
                         .padding(.horizontal)
                     
-                    ZStack {
+                    ZStack(alignment: .bottom) {
                         AsyncImage(url: vm.character.images[0]) { image in
                             image
                                 .resizable()
@@ -37,6 +37,7 @@ struct QuoteView: View {
                             ProgressView()
                         }
                         
+                        Text(vm.quote.character)
                     }
                     .frame(width: geometry.size.width/1.1, height: geometry.size.height/1.8)
                     .clipShape(.rect(cornerRadius: 50))
