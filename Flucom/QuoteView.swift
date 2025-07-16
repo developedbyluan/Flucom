@@ -23,6 +23,7 @@ struct QuoteView: View {
                     Spacer(minLength: 60)
                     
                     Text("\"\(vm.quote.quote)\"")
+                        .minimumScaleFactor(0.5)
                         .multilineTextAlignment(.center)
                         .foregroundStyle(.white) // white text even in light mode
                         .padding()
