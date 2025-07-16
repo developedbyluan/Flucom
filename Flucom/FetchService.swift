@@ -31,7 +31,9 @@ struct FetchService {
         }
         
         // Decode data
+        let quote = try JSONDecoder().decode(Quote.self, from: data)
         
         // return quote
+        return quote
     }
 }
