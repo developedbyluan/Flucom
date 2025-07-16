@@ -11,7 +11,15 @@ struct QuoteView: View {
     let show: String
     
     var body: some View {
-        Text(show)
+        GeometryReader { geometry in
+            ZStack {
+                Image(show.lowercased().replacingOccurrences(of: " ", with: ""))
+                    .resizable()
+                    .frame(width: geometry.size.width * 2.7, height: geometry.size.height * 1.2)
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+        }
+        .ignoresSafeArea()
     }
 }
 
