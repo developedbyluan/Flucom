@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct QuoteView: View {
+    let show: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(show)
     }
 }
 
 #Preview {
-    QuoteView()
+    QuoteView(show: "Breaking Bad")
         .preferredColorScheme(.dark)
 }
