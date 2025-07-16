@@ -36,4 +36,24 @@ struct FetchService {
         // return quote
         return quote
     }
+    
+    // https://breaking-bad-api-six.vercel.app/api/characters?name=Jesse+Pinkman
+    func fetchCharacter(_ name: String) async throws -> Char {
+        let characterURL = baseURL.appending(path: "characters")
+        let fetchURL = characterURL.appending(queryItems: [URLQueryItem(name: "name", value: name)])
+        
+        let (data, response) = try await URLSession.shared.data(from: fetchURL)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw FetchError.badResponse
+        }
+        
+        // decoder
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let characters = try decoder.decode([Char].self, from: data)
+        
+        return characters[0]
+    }
 }
