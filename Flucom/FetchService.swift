@@ -26,6 +26,9 @@ struct FetchService {
         let (data, response) = try await URLSession.shared.data(from: fetchURL)
         
         // Handle response
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw FetchError.badResponse
+        }
         
         // Decode data
         
