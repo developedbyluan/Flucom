@@ -31,10 +31,15 @@ struct QuoteView: View {
                     ZStack {
                         AsyncImage(url: vm.character.images[0]) { image in
                             image
+                                .resizable()
+                                .scaledToFill()
                         } placeholder: {
                             ProgressView()
                         }
+                        
                     }
+                    .frame(width: geometry.size.width/1.1, height: geometry.size.height/1.8)
+                    .clipShape(.rect(cornerRadius: 50))
                 }
                 .frame(width: geometry.size.width)
             }
