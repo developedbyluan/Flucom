@@ -39,6 +39,10 @@ struct QuoteView: View {
                         .frame(width: geometry.size.width/1.1, height: geometry.size.height/1.8)
 
                         Text(vm.quote.character)
+                            .foregroundStyle(.white) // white text even in light mode
+                            .padding(10)
+                            .frame(maxWidth: .infinity)
+                            .background(.ultraThinMaterial)
                     }
                     .frame(width: geometry.size.width/1.1, height: geometry.size.height/1.8)
                     .clipShape(.rect(cornerRadius: 50))
