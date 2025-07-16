@@ -36,7 +36,8 @@ struct QuoteView: View {
                         } placeholder: {
                             ProgressView()
                         }
-                        
+                        .frame(width: geometry.size.width/1.1, height: geometry.size.height/1.8)
+
                         Text(vm.quote.character)
                     }
                     .frame(width: geometry.size.width/1.1, height: geometry.size.height/1.8)
