@@ -22,6 +22,7 @@ struct QuoteView: View {
                 VStack {
                     Text("\"\(vm.quote.quote)\"")
                 }
+                .frame(width: geometry.size.width)
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
