@@ -47,6 +47,8 @@ struct QuoteView: View {
                     .frame(width: geometry.size.width/1.1, height: geometry.size.height/1.8)
                     .clipShape(.rect(cornerRadius: 50))
                     
+                    Spacer()
+                    
                     // Button
                     Button {
                         
