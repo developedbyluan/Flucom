@@ -27,7 +27,7 @@ class ViewModel {
     var quote: Quote
     var character: Char
     
-//    init() {
-//        
-//    }
+    init() {
+        
+    }
 }
