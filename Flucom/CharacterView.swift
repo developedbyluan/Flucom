@@ -19,7 +19,13 @@ struct CharacterView: View {
                     .scaledToFit()
                 
                 ScrollView {
-                    
+                    AsyncImage(url: character.images[0]) { image in
+                           image
+                            .resizable()
+                            .scaledToFill()
+                    } placeholder: {
+                        ProgressView()
+                    }
                 }
                 .border(.blue, width: 7)
             }
