@@ -20,7 +20,7 @@ struct CharacterView: View {
                 
                 ScrollView {
                     AsyncImage(url: character.images[0]) { image in
-                           image
+                        image
                             .resizable()
                             .scaledToFill()
                     } placeholder: {
@@ -71,18 +71,34 @@ struct CharacterView: View {
                             VStack(alignment: .leading) {
                                 Text(character.status)
                                     .font(.title2)
+                                
+                                if let death = character.death {
+                                    AsyncImage(url: death.image) { image in
+                                       image
+                                            .resizable()
+                                            .scaledToFit()
+                                            .clipShape(.rect(cornerRadius: 15))
+                                    } placeholder: {
+                                        ProgressView()
+                                    }
+                                    
+                                    Text("How: \(death.details)")
+                                        .padding(.bottom, 7)
+                                    
+                                    Text("Last words: \"\(death.lastWords)\"")
+                                }
                             }
-                            .border(Color.gray, width: 4)
+//                            .border(Color.gray, width: 4)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         }
-                        .border(Color.gray, width: 4)
+//                        .border(Color.gray, width: 4)
                         .tint(.primary)
                     }
                     .frame(width: geometry.size.width/1.25, alignment: .leading)
                     .padding(.bottom, 50)
                 }
                 .scrollIndicators(.hidden)
-//                .border(Color.gray, width: 7)
+                //                .border(Color.gray, width: 7)
             }
             
         }
