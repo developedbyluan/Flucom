@@ -30,7 +30,7 @@ struct FetchView: View {
                             EmptyView()
                         case .fetching:
                             ProgressView()
-                        case .success:
+                        case .successQuote:
                             Text("\"\(vm.quote.quote)\"")
                                 .minimumScaleFactor(0.5)
                                 .multilineTextAlignment(.center)
@@ -60,6 +60,11 @@ struct FetchView: View {
                             .clipShape(.rect(cornerRadius: 50))
                             .onTapGesture {
                                 showCharacterInfo.toggle()
+                            }
+                            
+                        case .successEpisode:
+                            VStack(alignment: .leading) {
+                                Text("Sample text")
                             }
                             
                         case .failed(let error):
