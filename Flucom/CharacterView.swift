@@ -54,7 +54,8 @@ struct CharacterView: View {
                     }
                     .frame(width: geometry.size.width/1.25, alignment: .leading)
                 }
-                .border(Color.gray, width: 7)
+                .scrollIndicators(.hidden)
+//                .border(Color.gray, width: 7)
             }
             
         }
