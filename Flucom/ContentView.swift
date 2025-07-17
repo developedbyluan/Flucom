@@ -10,14 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            Tab("Tab 1", systemImage: "globe") {
-                QuoteView(show: "Breaking Bad")
-                    .toolbarBackgroundVisibility(.visible, for: .tabBar)
+            Tab(Constants.bbName, systemImage: "globe") {
+                FetchView(show: Constants.bbName)
             }
             
-            Tab("Tab 2", systemImage: "gear") {
-                QuoteView(show:"Better Call Saul")
-                    .toolbarBackgroundVisibility(.visible, for: .tabBar)
+            Tab(Constants.bcsName, systemImage: "gear") {
+                FetchView(show: Constants.bcsName)
+            }
+            
+            Tab(Constants.ecName, systemImage: "car") {
+                FetchView(show: Constants.ecName)
             }
         }
         .preferredColorScheme(.dark)
