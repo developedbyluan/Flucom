@@ -1,5 +1,5 @@
 //
-//  QuoteView.swift
+//  FetchView.swift
 //  Flucom
 //
 //  Created by Tran Luan on 16/7/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuoteView: View {
+struct FetchView: View {
     let vm = ViewModel()
     
     let show: String
@@ -100,6 +100,6 @@ struct QuoteView: View {
 }
 
 #Preview {
-    QuoteView(show: Constants.ecName)
+    FetchView(show: Constants.ecName)
         .preferredColorScheme(.dark)
 }
