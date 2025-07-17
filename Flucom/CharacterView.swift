@@ -67,10 +67,15 @@ struct CharacterView: View {
                         
                         Divider()
                         
-                        
+                        DisclosureGroup("Status (spoiler alert!):") {
+                            Text(character.status)
+                                .font(.title2)
+                        }
+                        .border(Color.gray, width: 4)
                         
                     }
                     .frame(width: geometry.size.width/1.25, alignment: .leading)
+                    .padding(.bottom, 50)
                 }
                 .scrollIndicators(.hidden)
 //                .border(Color.gray, width: 7)
