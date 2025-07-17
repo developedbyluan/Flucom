@@ -48,7 +48,23 @@ struct CharacterView: View {
                         
                         ForEach(character.occupations, id: \.self) { occupation in
                             Text("- \(occupation)")
+                                .font(.subheadline)
                         }
+                        
+                        Divider()
+                        
+                        Text("Nicknames:")
+                        
+                        if character.aliases.count > 0 {
+                            ForEach(character.aliases, id: \.self) { alias in
+                                Text("- \(alias)")
+                                    .font(.subheadline)
+                            }
+                        } else {
+                            Text("None")
+                                .font(.subheadline)
+                        }
+                        
                         
                         
                     }
