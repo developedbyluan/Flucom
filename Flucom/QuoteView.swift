@@ -99,6 +99,6 @@ struct QuoteView: View {
 }
 
 #Preview {
-    QuoteView(show: "Better Call Saul")
+    QuoteView(show: Constants.ecName)
         .preferredColorScheme(.dark)
 }
