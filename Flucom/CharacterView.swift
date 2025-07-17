@@ -76,7 +76,7 @@ struct CharacterView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                         }
                         .border(Color.gray, width: 4)
-                        
+                        .tint(.primary)
                     }
                     .frame(width: geometry.size.width/1.25, alignment: .leading)
                     .padding(.bottom, 50)
