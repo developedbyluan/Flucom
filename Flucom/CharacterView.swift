@@ -65,6 +65,8 @@ struct CharacterView: View {
                                 .font(.subheadline)
                         }
                         
+                        Divider()
+                        
                         
                         
                     }
