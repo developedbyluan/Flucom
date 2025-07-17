@@ -69,7 +69,7 @@ struct FetchView: View {
                             Text(error.localizedDescription)
                         }
                         
-                        Spacer()
+                        Spacer(minLength: 20)
                     }
                     
                     // Buttons
