@@ -68,8 +68,12 @@ struct CharacterView: View {
                         Divider()
                         
                         DisclosureGroup("Status (spoiler alert!):") {
-                            Text(character.status)
-                                .font(.title2)
+                            VStack(alignment: .leading) {
+                                Text(character.status)
+                                    .font(.title2)
+                            }
+                            .border(Color.gray, width: 4)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
                         .border(Color.gray, width: 4)
                         
