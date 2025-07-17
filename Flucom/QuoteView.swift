@@ -72,7 +72,7 @@ struct QuoteView: View {
                     // Button
                     Button {
                         Task {
-                            await vm.getData(for: show)
+                            await vm.getQuoteData(for: show)
                         }
                         
                     } label: {
