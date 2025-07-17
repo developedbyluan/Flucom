@@ -69,21 +69,41 @@ struct FetchView: View {
                         Spacer()
                     }
                     
-                    // Button
-                    Button {
-                        Task {
-                            await vm.getQuoteData(for: show)
+                    // Buttons
+                    HStack {
+                        Button {
+                            Task {
+                                await vm.getQuoteData(for: show)
+                            }
+                            
+                        } label: {
+                            Text("Get Random Quote")
+                                .font(.title3)
+                                .foregroundStyle(.white)
+                                .padding()
+                                .background(Color("\(show.removeSpaces())Button"))
+                                .clipShape(.rect(cornerRadius: 7))
+                                .shadow(color: Color("\(show.removeSpaces())Shadow"), radius: 2)
                         }
                         
-                    } label: {
-                        Text("Get Random Quote")
-                            .font(.title)
-                            .foregroundStyle(.white)
-                            .padding()
-                            .background(Color("\(show.removeSpaces())Button"))
-                            .clipShape(.rect(cornerRadius: 7))
-                            .shadow(color: Color("\(show.removeSpaces())Shadow"), radius: 2)
+                        Spacer()
+                        
+                        Button {
+                            Task {
+                                await vm.getEpisodeData(for: show)
+                            }
+                            
+                        } label: {
+                            Text("Get Random Episode")
+                                .font(.title3)
+                                .foregroundStyle(.white)
+                                .padding()
+                                .background(Color("\(show.removeSpaces())Button"))
+                                .clipShape(.rect(cornerRadius: 7))
+                                .shadow(color: Color("\(show.removeSpaces())Shadow"), radius: 2)
+                        }
                     }
+                    .padding(.horizontal, 30)
                     
                     Spacer(minLength: 95)
                 }
