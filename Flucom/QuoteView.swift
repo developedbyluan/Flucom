@@ -92,6 +92,7 @@ struct QuoteView: View {
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
         .ignoresSafeArea()
+        .toolbarBackgroundVisibility(.visible, for: .tabBar)
         .sheet(isPresented: $showCharacterInfo) {
             CharacterView(character: vm.character, show: show)
         }
