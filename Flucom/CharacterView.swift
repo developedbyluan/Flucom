@@ -32,13 +32,19 @@ struct CharacterView: View {
                     
                     VStack(alignment: .leading) {
                         Text(character.name)
+                            .font(.largeTitle)
+                        
+                        Text("Portrayed by: \(character.portrayedBy)")
+                            .font(.subheadline)
+                        
+                        Divider()
+                        
+                        
                     }
                     .frame(width: geometry.size.width/1.25, alignment: .leading)
-                    .border(.red, width: 7)
                 }
-                .border(.blue, width: 7)
+                .border(Color.gray, width: 7)
             }
-            .border(.yellow, width: 7)
             
         }
         .ignoresSafeArea()
