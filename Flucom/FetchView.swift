@@ -63,9 +63,7 @@ struct FetchView: View {
                             }
                             
                         case .successEpisode:
-                            VStack(alignment: .leading) {
-                                Text("Sample text")
-                            }
+                            EpisodeView(episode: vm.episode)
                             
                         case .failed(let error):
                             Text(error.localizedDescription)

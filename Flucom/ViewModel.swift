@@ -27,7 +27,7 @@ class ViewModel {
     
     var quote: Quote
     var character: Char
-    var episode: Episode?
+    var episode: Episode
     
     init() {
         let decoder = JSONDecoder()
