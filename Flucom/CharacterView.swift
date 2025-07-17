@@ -26,9 +26,13 @@ struct CharacterView: View {
                     } placeholder: {
                         ProgressView()
                     }
+                    .frame(width: geometry.size.width/1.2, height: geometry.size.height/1.7)
+                    .clipShape(.rect(cornerRadius: 25))
+                    .padding(.top, 60)
                 }
                 .border(.blue, width: 7)
             }
+            .border(.yellow, width: 7)
             
         }
         .ignoresSafeArea()
