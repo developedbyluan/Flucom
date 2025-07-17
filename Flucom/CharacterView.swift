@@ -39,6 +39,17 @@ struct CharacterView: View {
                         
                         Divider()
                         
+                        Text("\(character.name) Character Info")
+                            .font(.title2)
+                        
+                        Text("Born: \(character.birthday)")
+                        
+                        Divider()
+                        
+                        ForEach(character.occupations, id: \.self) { occupation in
+                            Text("- \(occupation)")
+                        }
+                        
                         
                     }
                     .frame(width: geometry.size.width/1.25, alignment: .leading)
